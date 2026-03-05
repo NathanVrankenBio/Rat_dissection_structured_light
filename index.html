@@ -55,12 +55,13 @@
 <!--UTILITY-->
 <script type="text/javascript" src="js/init.js"></script>
 </head>
-<body>
+	
+<body style="background-color:black;">
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/light/home.png"/><br/>
 <!--NEXTMODEL-->
-  <img id="next_model"  title="Show Next Model"        src="skins/light/next.png" onclick="toggle_menus()" /><br/>
+  <img id="next_model"  title="Show Next Model"        src="skins/light/next.png" onclick="toggle_menus()"/><br/>
 <!--NEXTMODEL-->
 <!--ZOOM-->
   <img id="zoomin"      title="Zoom In"                src="skins/light/zoomin.png"/><br/>
@@ -93,10 +94,327 @@
 -->
 <!--POINT PICKING-->
 
+<!--ANNOTATIONS-->
+
+	<div id="rightmenu1">
+		<form>
+			<p><tr><td><center><b> Brown rat <br> (albino strain) </b><br> 
+			</p><p><i> Rattus norvegicus </i> <br> Berkenhout, 1769 </center></td></tr></p><hr/>
+
+			<p><b> &nbsp; Sensory system </b> &nbsp;<br>
+				<input id="Mouth" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Mouth',true,false)" > Mouth &nbsp;<br>
+				<input id="Upper lip with large cleft" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Upper lip with large cleft',true,false)" > Upper lip with large cleft <sup>1</sup> &nbsp;<br>
+				<input id="Incisors" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Incisors',true,false)" > Incisors &nbsp;<br>
+				<input id="External nares" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('External nares',true,false)" > External nares (1 pair) <sup>1</sup> &nbsp;<br>
+				<input id="Whiskers" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Whiskers_1',true,false)
+					;presenter.setInstanceVisibility('Whiskers_2',true,false)" > Whiskers <sup>1</sup> &nbsp;<br>
+				<input id="Eye with eyelid" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Eye with eyelid',true,false)" > Eye with eyelid &nbsp;<br>
+				<input id="Pinna" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Pinna',true,false)" > Pinna &nbsp;<br>
+				<sub><i> &nbsp;&nbsp;&nbsp; All above traits are better <br>&nbsp;&nbsp;&nbsp; visible in the next step </i></sub> <br>
+
+			</p><p><b> &nbsp; Locomotor system </b> &nbsp;<br>
+				<input id="Front leg" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Front leg',true,false)" > Front leg &nbsp;<br>
+				<input id="Hind leg" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Hind leg',true,false)" > Hind leg &nbsp;<br>
+				<input id="Tail" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Tail',true,false)" > Tail &nbsp;<br>	
+
+			</p><p><b> &nbsp; Excretory & <br> &nbsp reproductive system </b> &nbsp;<br>	
+				<input id="Teats" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Teats_1',true,false)
+					;presenter.setInstanceVisibility('Teats_2',true,false)" > Teats (6 pairs) &nbsp;<br>
+				<input id="Urogenital opening" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Urogenital opening',true,false)" > Urogenital opening &nbsp;<br>
+				<input id="Anus" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)
+					;presenter.setInstanceVisibility('Anus',true,false)" > Anus &nbsp;<br>
+
+			</p><p>
+				<input id="none" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step1',true,false)" checked > <i>None</i>&nbsp;
+			</p><p>
+				<sub><i> &nbsp;&nbsp;&nbsp; 1: unclear/indistinguishable <br> &nbsp;&nbsp;&nbsp; 2: not visible </i></sub>&nbsp;
+			</p>
+
+		</form>			
+	</div>
+
+	<div hidden id="rightmenu2">
+		<form>
+			<p><tr><td><center><b> Brown rat <br> (albino strain) </b><br> 
+			</p><p><i> Rattus norvegicus </i> <br> Berkenhout, 1769 </center></td></tr></p><hr/>
+
+			<p><b> &nbsp; Digestive system </b> &nbsp;<br>
+				<input id="Oesophagus2" type="radio" name="annot" style="margin-left:10px;" 
+										       disabled > Oesophagus <sup>2</sup> &nbsp;<br>
+				<input id="Stomach2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Stomach2',true,false)" > Stomach <sup>1</sup> &nbsp;<br>
+				<input id="Liver2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Liver2',true,false)" > Liver (4 lobes) &nbsp;<br>
+				<input id="Duodenum2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Duodenum2',true,false)" > Duodenum <sup>1</sup> &nbsp;<br>
+				<input id="Pancreas2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Pancreas2',true,false)" > Pancreas &nbsp;<br>
+				<input id="Jejunum2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Jejunum2',true,false)" > Jejunum &nbsp;<br>
+				<input id="Ileum2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Ileum2',true,false)" > Ileum &nbsp;<br>
+				<input id="Caecum2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Caecum2',true,false)" > Caecum &nbsp;<br>
+				<input id="Colon2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Colon2',true,false)" > Colon &nbsp;<br>
+				<input id="Rectum2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Rectum2',true,false)" > Rectum <sup>1</sup> &nbsp;<br>
+				<input id="Anus2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Anus2',true,false)" > Anus &nbsp;
+
+			</p><p><b> &nbsp; Cardiovascular system </b> &nbsp;<br>
+				<input id="Heart2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Heart2',true,false)" > Heart &nbsp;<br>
+
+			</p><p><b> &nbsp; Respiratory system </b> &nbsp;<br>
+				<input id="Lung2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Lung2',true,false)" > Lung &nbsp;<br>
+				<input id="Diaphragm2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Diaphragm2',true,false)" > Diaphragm <sup>1</sup> &nbsp;
+
+			</p><p><b> &nbsp; Lymphatic system </b> &nbsp;<br>
+				<input id="Thymus2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Thymus2',true,false)" > Thymus &nbsp;<br>
+				<input id="Spleen2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Spleen2',true,false)" > Spleen <sup>1</sup> &nbsp;
+
+
+			</p><p><b> &nbsp; Excretory system </b> &nbsp;<br>
+				<input id="Kidney2" type="radio" name="annot" style="margin-left:10px;" 
+										       disabled > Kidney <sup>2</sup> &nbsp;<br>
+				<input id="Urinary bladder2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Urinary bladder2',true,false)" > Urinary bladder &nbsp;<br>
+
+			</p><p><b> &nbsp; Reproductive system </b> &nbsp;<br>
+				<input id="Mammary glands2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Mammary glands2_1',true,false)
+					;presenter.setInstanceVisibility('Mammary glands2_2',true,false)
+					;presenter.setInstanceVisibility('Mammary glands2_3',true,false)" > Mammary glands <sup>1</sup> &nbsp;<br>
+				<input id="Ovary and oviduct2" type="radio" name="annot" style="margin-left:10px;" 
+										       disabled > Ovary and oviduct <sup>2</sup> &nbsp;<br>
+				<input id="Uterus2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Uterus2',true,false)" > Uterus body <sup>1</sup> &nbsp;<br>
+				<input id="Uterine horn2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Uterine horn2',true,false)" > Uterine horn (1 pair) &nbsp;<br>
+				<input id="Vagina2" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)
+					;presenter.setInstanceVisibility('Vagina2',true,false)" > Vagina &nbsp;
+
+			</p><p>
+				<input id="none" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step2',true,false)" checked > <i>None</i>&nbsp;
+			</p><p>
+				<sub><i> &nbsp;&nbsp;&nbsp; 1: unclear/indistinguishable <br> &nbsp;&nbsp;&nbsp; 2: not visible </i></sub>&nbsp;
+			</p>
+
+		</form>			
+	</div>
+
+	<div hidden id="rightmenu3">
+		<form>
+			<p><tr><td><center><b> Brown rat <br> (albino strain) </b><br> 
+			</p><p><i> Rattus norvegicus </i> <br> Berkenhout, 1769 </center></td></tr></p><hr/>
+
+			<p><b> &nbsp; Digestive system </b> &nbsp;<br>
+				<input id="Oesophagus3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Oesophagus3',true,false)" > Oesophagus &nbsp;<br>
+				<input id="Stomach3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Stomach3',true,false)" > Stomach &nbsp;<br>
+				<input id="Liver3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Liver3',true,false)" > Liver (4 lobes) &nbsp;<br>
+				<input id="Duodenum3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Duodenum3',true,false)" > Duodenum &nbsp;<br>
+				<input id="Pancreas3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Pancreas3',true,false)" > Pancreas &nbsp;<br>
+				<input id="Jejunum3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Jejunum3',true,false)" > Jejunum &nbsp;<br>
+				<input id="Ileum3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Ileum3',true,false)" > Ileum &nbsp;<br>
+				<input id="Caecum3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Caecum3',true,false)" > Caecum &nbsp;<br>
+				<input id="Colon3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Colon3',true,false)" > Colon &nbsp;<br>
+				<input id="Rectum3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Rectum3',true,false)" > Rectum <sup>1</sup> &nbsp;<br>
+				<input id="Anus3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Anus3',true,false)" > Anus &nbsp;
+
+			</p><p><b> &nbsp; Cardiovascular system </b> &nbsp;<br>
+				<input id="Heart3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Heart3',true,false)" > Heart &nbsp;<br>
+
+			</p><p><b> &nbsp; Respiratory system </b> &nbsp;<br>
+				<input id="Lung3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Lung3',true,false)" > Lung &nbsp;<br>
+				<input id="Diaphragm3" type="radio" name="annot" style="margin-left:10px;" 
+										       disabled > Diaphragm <sup>2</sup> &nbsp;<br>
+
+			</p><p><b> &nbsp; Lymphatic system </b> &nbsp;<br>
+				<input id="Thymus3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Thymus3',true,false)" > Thymus &nbsp;<br>
+				<input id="Spleen3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Spleen3',true,false)" > Spleen &nbsp;
+
+			</p><p><b> &nbsp; Excretory system </b> &nbsp;<br>
+				<input id="Kidney3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Kidney3',true,false)" > Kidney &nbsp;<br>
+				<input id="Urinary bladder3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Urinary bladder3',true,false)" > Urinary bladder &nbsp;<br>
+
+			</p><p><b> &nbsp; Reproductive system </b> &nbsp;<br>
+				<input id="Mammary glands3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Mammary glands3',true,false)" > Mammary glands <sup>1</sup> &nbsp;<br>
+				<input id="Ovary and oviduct3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Ovary and oviduct3',true,false)" > Ovary and oviduct <sup>1</sup> &nbsp;<br>
+				<input id="Uterus3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Uterus3',true,false)" > Uterus body &nbsp;<br>
+				<input id="Uterine horn3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Uterine horn3',true,false)" > Uterine horn (1 pair) &nbsp;<br>
+				<input id="Vagina3" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)
+					;presenter.setInstanceVisibility('Vagina3',true,false)" > Vagina &nbsp;
+
+			</p><p>
+				<input id="none" type="radio" name="annot" style="cursor:hand;margin-left:10px;" onclick=
+					"presenter.setInstanceVisibility(HOP_ALL,false,true)
+					;presenter.setInstanceVisibility('step3',true,false)" checked > <i>None</i>&nbsp;
+			</p><p>
+				<sub><i> &nbsp;&nbsp;&nbsp; 1: unclear/indistinguishable <br> &nbsp;&nbsp;&nbsp; 2: not visible </i></sub>&nbsp;
+			</p>
+
+		</form>			
+	</div>
+
+
  <div id="logos">
- <img src="RBINS_logo.png" height="60" width="113.16" style="opacity:0.5;" /> &nbsp&nbsp;&nbsp;
- <img src="UH_logo.png" height="40" width="168.76" style="opacity:0.5;" /> 
+ <img src="RBINS_logo.png" height="50" width="94.3" style="opacity:0.5;" /> &nbsp&nbsp;&nbsp;
+ <img src="UH_logo.png" height="50" width="210.95" style="opacity:0.5;" /> 
  </div>
+
+<!--ANNOTATIONS-->
 
  <canvas id="draw-canvas" style="background:black"/>
 </div>
@@ -106,7 +424,20 @@
 
 <script type="text/javascript">
 
-
+function toggle_menus() {
+  var rm1 = document.getElementById("rightmenu1");
+  var rm2 = document.getElementById("rightmenu2");
+  var rm3 = document.getElementById("rightmenu3");
+  if (rm1.style.display !== "none") {
+    rm1.style.display = "none"; rm2.style.display = "block";
+  }
+  else if (rm2.style.display !== "none") {
+    rm2.style.display = "none"; rm3.style.display = "block";
+  }
+  else if (rm3.style.display !== "none") {
+    rm3.style.display = "none"; rm1.style.display = "block";
+  }
+}
 
 var presenter = null;
 
@@ -115,82 +446,77 @@ function setup3dhop() {
 
 	presenter.setScene({
 		meshes: {
-			"mesh_1" : { url: "rat_dissection1.nxz" },
-			"mesh_2" : { url: "rat_dissection2.nxz" },
-			"mesh_3" : { url: "rat_dissection3.nxz" },
-			"mesh_annot": { url: "arrow_annotations.nxz" },
+			"mesh_1" : { url: "models/rat_dissection1.nxz" },
+			"mesh_2" : { url: "models/rat_dissection2.nxz" },
+			"mesh_3" : { url: "models/rat_dissection3.nxz" },
+			"mesh_annot": { url: "models/arrow_annotations.nxs" }
 		},
 		modelInstances : {
 			"model_1" : { mesh  : "mesh_1", tags : ["step1"], color : [1,1,1] },
 			"model_2" : { mesh  : "mesh_2", tags : ["step2"], color : [1,1,1] },
 			"model_3" : { mesh  : "mesh_3", tags : ["step3"], color : [1,1,1] },
 
-			"model_Mouth" : { mesh: "mesh_annot", tags: ["Mouth"], transform: {translation:[163.48 , 28.89 , 24.26],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Nostril" : { mesh: "mesh_annot", tags: ["Nostril"], transform: {translation:[168.81 , 24.10 , 39.09],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Ampullae of Lorenzini" : { mesh: "mesh_annot", tags: ["Ampullae of Lorenzini"], transform: {translation:[175.78 , 22.65 , 30.23],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Eye" : { mesh: "mesh_annot", tags: ["Eye"], transform: {translation:[144.92 , 10.73 , 43.02],rotation:[50,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Spiraculum" : { mesh: "mesh_annot", tags: ["Spiraculum"], transform: {translation:[132.40 , 9.29 , 43.54],rotation:[50,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Gill slits" : { mesh: "mesh_annot", tags: ["Gill slits"], transform: {translation:[102.71 , 26.53 , 51.63],rotation:[50,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pectoral fin" : { mesh: "mesh_annot", tags: ["Pectoral fin"], transform: {translation:[55.21 , 25.69 , 60.85],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pelvic fin" : { mesh: "mesh_annot", tags: ["Pelvic fin"], transform: {translation:[-59.88 , 36.34 , 34.43],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Dorsal fin1_1" : { mesh: "mesh_annot", tags: ["Dorsal fin1_1"], transform: {translation:[-128.22 , 7.98 , 32.08],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Dorsal fin1_2" : { mesh: "mesh_annot", tags: ["Dorsal fin1_2"], transform: {translation:[-176.56 , 7.61 , -56.88],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Anal fin" : { mesh: "mesh_annot", tags: ["Anal fin"], transform: {translation:[-138.20 , 29.39 , -19.08],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Caudal fin" : { mesh: "mesh_annot", tags: ["Caudal fin"], transform: {translation:[-86.65 , 11.86 , -76.39],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Clasper" : { mesh: "mesh_annot", tags: ["Clasper"], transform: {translation:[-82.92 , 44.18 , 15.17],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Cloaca" : { mesh: "mesh_annot", tags: ["Cloaca"], transform: {translation:[-55.48 , 43.14 , 6.53],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Parasite" : { mesh: "mesh_annot", tags: ["Parasite"], transform: {translation:[-74.90 , 39.72 , 9.81],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Mouth" : { mesh: "mesh_annot", tags: ["Mouth"], transform: {translation:[167.22 , 31.54 , -16.15],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Upper lip with large cleft" : { mesh: "mesh_annot", tags: ["Upper lip with large cleft"], transform: {translation:[174.17 , 30.64 , -21.17],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Incisors" : { mesh: "mesh_annot", tags: ["Incisors"], transform: {translation:[169.09 , 31.02 , -20.83],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_External nares" : { mesh: "mesh_annot", tags: ["External nares"], transform: {translation:[179.21 , 26.45 , -21.73],rotation:[0,0,-45],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Whiskers_1" : { mesh: "mesh_annot", tags: ["Whiskers_1"], transform: {translation:[163.43 , 4.75 , -5.16],rotation:[0,0,-45],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Whiskers_2" : { mesh: "mesh_annot", tags: ["Whiskers_2"], transform: {translation:[176.08 , 26.47 , -13.86],rotation:[0,0,-45],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Eye with eyelid" : { mesh: "mesh_annot", tags: ["Eye with eyelid"], transform: {translation:[163.36 , 13.21 , -4.72],rotation:[45,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Pinna" : { mesh: "mesh_annot", tags: ["Pinna"], transform: {translation:[147.57 , 6.31 , 10.57],rotation:[45,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Front leg" : { mesh: "mesh_annot", tags: ["Front leg"], transform: {translation:[127.62 , 15.55 , 50.61],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Hind leg" : { mesh: "mesh_annot", tags: ["Hind leg"], transform: {translation:[-52.59 , 20.28 , 53.33],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Tail" : { mesh: "mesh_annot", tags: ["Tail"], transform: {translation:[ -114.86 , 9.52 , -3.31],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Teats_1" : { mesh: "mesh_annot", tags: ["Teats_1"], transform: {translation:[81.37 , 34.99 , 15.12],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Teats_2" : { mesh: "mesh_annot", tags: ["Teats_2"], transform: {translation:[-25.01 , 30.88 , 18.84],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Urogenital opening" : { mesh: "mesh_annot", tags: ["Urogenital opening"], transform: {translation:[-46.59 , 27.32 , -0.89],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Anus" : { mesh: "mesh_annot", tags: ["Anus"], transform: {translation:[-55.88 , 22.18 , -0.69],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
 
-			"model_Liver left lobe2" : { mesh: "mesh_annot", tags: ["Liver left lobe2"], transform: {translation:[80.85 , 33.31 , 41.94],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Liver median lobe2" : { mesh: "mesh_annot", tags: ["Liver median lobe2"], transform: {translation:[64.65 , 37.67 , 23.32],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Liver right lobe2" : { mesh: "mesh_annot", tags: ["Liver right lobe2"], transform: {translation:[52.59 , 26.76 , -13.98],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Gallbladder2" : { mesh: "mesh_annot", tags: ["Gallbladder2"], transform: {translation:[68.14 , 34.37 , 13.90],rotation:[-50,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Bile duct2" : { mesh: "mesh_annot", tags: ["Bile duct2"], transform: {translation:[57.36 , 28.61 , 10.61],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Heart2" : { mesh: "mesh_annot", tags: ["Heart2"], transform: {translation:[100.65 , 31.71 , 22.04],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Spleen2" : { mesh: "mesh_annot", tags: ["Spleen2"], transform: {translation:[-7.64 , 31.77 , 55.09],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Gills2" : { mesh: "mesh_annot", tags: ["Gills2"], transform: {translation:[116.67 , 20.38 , 59.09],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Stomach2" : { mesh: "mesh_annot", tags: ["Stomach2"], transform: {translation:[37.01 , 38.30 , 40.54],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pancreas2" : { mesh: "mesh_annot", tags: ["Pancreas2"], transform: {translation:[ 29.88 , 29.26 , 1.53],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pylorus2" : { mesh: "mesh_annot", tags: ["Pylorus2"], transform: {translation:[0.31 , 34.71 , 43.57],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Duodenum2" : { mesh: "mesh_annot", tags: ["Duodenum2"], transform: {translation:[16.49 , 34.81 , 20.95],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Spiral valve intestine2" : { mesh: "mesh_annot", tags: ["Spiral valve intestine2"], transform: {translation:[7.10 , 23.11 , -14.75],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Rectal gland2" : { mesh: "mesh_annot", tags: ["Rectal gland2"], transform: {translation:[-26.34 , 32.29 , 12.89],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Rectum2" : { mesh: "mesh_annot", tags: ["Rectum2"], transform: {translation:[-31.12 , 24.61 , -9.27],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Clasper2" : { mesh: "mesh_annot", tags: ["Clasper2"], transform: {translation:[-82.43 , 42.50 , 14.28],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Cloaca2" : { mesh: "mesh_annot", tags: ["Cloaca2"], transform: {translation:[-54.65 , 38.53 , 6.89],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Testis2" : { mesh: "mesh_annot", tags: ["Testis2"], transform: {translation:[49.06 , 24.60 , 4.72],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_" : { mesh: "mesh_annot", tags: [""], transform: {translation:[],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Stomach2" : { mesh: "mesh_annot", tags: ["Stomach2"], transform: {translation:[55.56 , 24.92 , 18.13],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Liver2" : { mesh: "mesh_annot", tags: ["Liver2"], transform: {translation:[64.75 , 33.90 , -6.10],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Duodenum2" : { mesh: "mesh_annot", tags: ["Duodenum2"], transform: {translation:[50.04 , 31.39 , -21.19],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Pancreas2" : { mesh: "mesh_annot", tags: ["Pancreas2"], transform: {translation:[35.65 , 32.89 , 4.84],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Jejunum2" : { mesh: "mesh_annot", tags: ["Jejunum2"], transform: {translation:[30.77 , 25.83 , -31.83],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Ileum2" : { mesh: "mesh_annot", tags: ["Ileum2"], transform: {translation:[31.90 , 33.11 , -6.15],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Caecum2" : { mesh: "mesh_annot", tags: ["Caecum2"], transform: {translation:[36.07 , 21.38 , 34.35],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Colon2" : { mesh: "mesh_annot", tags: ["Colon2"], transform: {translation:[5.29 , 30.54 , -4.16],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Rectum2" : { mesh: "mesh_annot", tags: ["Rectum2"], transform: {translation:[-7.44 , 26.96 , 0.41],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Anus2" : { mesh: "mesh_annot", tags: ["Anus2"], transform: {translation:[-54.59 , 19.28 , -1.95],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Heart2" : { mesh: "mesh_annot", tags: ["Heart2"], transform: {translation:[89.35 , 36.31 , -4.68],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Lung2" : { mesh: "mesh_annot", tags: ["Lung2"], transform: {translation:[87.33 , 29.29 , -18.46],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Diaphragm2" : { mesh: "mesh_annot", tags: ["Diaphragm2"], transform: {translation:[80.87 , 28.93 , -11.53],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Spleen2" : { mesh: "mesh_annot", tags: ["Spleen2"], transform: {translation:[49.08 , 17.70 , 26.56],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Thymus2" : { mesh: "mesh_annot", tags: ["Thymus2"], transform: {translation:[103.49 , 33.86 , -6.71],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Urinary bladder2" : { mesh: "mesh_annot", tags: ["Urinary bladder2"], transform: {translation:[-15.01 , 30.63 , -0.76],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Mammary glands2_1" : { mesh: "mesh_annot", tags: ["Mammary glands2_1"], transform: {translation:[9.31 , 12.21 , 49.35],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Mammary glands2_2" : { mesh: "mesh_annot", tags: ["Mammary glands2_2"], transform: {translation:[80.82 , 10.97 , 30.63],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Mammary glands2_3" : { mesh: "mesh_annot", tags: ["Mammary glands2_3"], transform: {translation:[103.89 , 10.47 , 37.10],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Uterus2" : { mesh: "mesh_annot", tags: ["Uterus2"], transform: {translation:[-12.82 , 28.21 , 1.48],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Uterine horn2" : { mesh: "mesh_annot", tags: ["Uterine horn2"], transform: {translation:[2.35 , 26.38 , 6.60],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Vagina2" : { mesh: "mesh_annot", tags: ["Vagina2"], transform: {translation:[-43.19 , 26.78 , -1.35],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
 
-			"model_Liver left lobe3" : { mesh: "mesh_annot", tags: ["Liver left lobe3"], transform: {translation:[15.74 , 13.30 , -101.62],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Liver median lobe3" : { mesh: "mesh_annot", tags: ["Liver median lobe3"], transform: {translation:[27.26 , 10.93 , -75.55],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Liver right lobe3" : { mesh: "mesh_annot", tags: ["Liver right lobe3"], transform: {translation:[16.62 , 14.31 , -41.78],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Gallbladder3" : { mesh: "mesh_annot", tags: ["Gallbladder3"], transform: {translation:[37.50 , 12.93 , -76.04],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Bile duct3_1" : { mesh: "mesh_annot", tags: ["Bile duct3_1"], transform: {translation:[48.35 , 13.35 , -70.44],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Bile duct3_2" : { mesh: "mesh_annot", tags: ["Bile duct3_2"], transform: {translation:[66.90 , 33.77 , 90.17],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Heart3" : { mesh: "mesh_annot", tags: ["Heart3"], transform: {translation:[100.54 , 30.97 , 22.36],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Spleen3" : { mesh: "mesh_annot", tags: ["Spleen3"], transform: {translation:[80.48 , 21.99 , 116.56],rotation:[50,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Gills3" : { mesh: "mesh_annot", tags: ["Gills3"], transform: {translation:[116.69 , 20.70 , 59.35],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Oesophagus3" : { mesh: "mesh_annot", tags: ["Oesophagus3"], transform: {translation:[86.49 , 27.88 , 20.26],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Stomach3" : { mesh: "mesh_annot", tags: ["Stomach3"], transform: {translation:[83.82 , 33.75 , 73.60],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pancreas3" : { mesh: "mesh_annot", tags: ["Pancreas3"], transform: {translation:[  2.94 , 17.91 , 89.31],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Pylorus3" : { mesh: "mesh_annot", tags: ["Pylorus3"], transform: {translation:[68.67 , 31.36 , 100.50],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Duodenum3" : { mesh: "mesh_annot", tags: ["Duodenum3"], transform: {translation:[45.14 , 20.33 , 98.39],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Spiral valve intestine3" : { mesh: "mesh_annot", tags: ["Spiral valve intestine3"], transform: {translation:[-28.36 , 17.49 , 69.16],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Rectal gland3" : { mesh: "mesh_annot", tags: ["Rectal gland3"], transform: {translation:[-26.00 , 31.54 , 8.12],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Rectum3" : { mesh: "mesh_annot", tags: ["Rectum3"], transform: {translation:[-38.12 , 26.94 , 30.64],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Clasper3" : { mesh: "mesh_annot", tags: ["Clasper3"], transform: {translation:[-81.59 , 41.86 , 12.83],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Cloaca3" : { mesh: "mesh_annot", tags: ["Cloaca3"], transform: {translation:[-57.11 , 36.16 , 5.97],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Testis3" : { mesh: "mesh_annot", tags: ["Testis3"], transform: {translation:[49.96 , 16.90 , -8.45],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Kidney3_1" : { mesh: "mesh_annot", tags: ["Kidney3_1"], transform: {translation:[23.37 , 23.72 , 26.74],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Kidney3_2" : { mesh: "mesh_annot", tags: ["Kidney3_2"], transform: {translation:[57.51 , 21.75 , 35.87],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Epididymis3" : { mesh: "mesh_annot", tags: ["Epididymis3"], transform: {translation:[50.34 , 25.48 , 29.14],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
-			"model_Seminal vesicles3" : { mesh: "mesh_annot", tags: ["Seminal vesicles3"], transform: {translation:[-2.60 , 29.17 , 21.06],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Oesophagus3" : { mesh: "mesh_annot", tags: ["Oesophagus3"], transform: {translation:[73.25 , 20.38 , -4.04],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Stomach3" : { mesh: "mesh_annot", tags: ["Stomach3"], transform: {translation:[62.51 , 23.68 , 9.68],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Liver3" : { mesh: "mesh_annot", tags: ["Liver3"], transform: {translation:[82.89 , 20.73 , 45.21],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Duodenum3" : { mesh: "mesh_annot", tags: ["Duodenum3"], transform: {translation:[67.90 , 15.81 , -14.03],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Pancreas3" : { mesh: "mesh_annot", tags: ["Pancreas3"], transform: {translation:[51.35 , 26.35 , 1.37],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Jejunum3" : { mesh: "mesh_annot", tags: ["Jejunum3"], transform: {translation:[44.25 , 11.74 , -50.30],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Ileum3" : { mesh: "mesh_annot", tags: ["Ileum3"], transform: {translation:[0.82 , 13.54 , -60.20],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Caecum3" : { mesh: "mesh_annot", tags: ["Caecum3"], transform: {translation:[33.84 , 19.09 , 33.37],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Colon3" : { mesh: "mesh_annot", tags: ["Colon3"], transform: {translation:[25.24 , 29.39 , -3.81],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Rectum3" : { mesh: "mesh_annot", tags: ["Rectum3"], transform: {translation:[-5.77 , 26.90 , -0.89],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Anus3" : { mesh: "mesh_annot", tags: ["Anus3"], transform: {translation:[-54.45 , 20.55 , -3.68],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Heart3" : { mesh: "mesh_annot", tags: ["Heart3"], transform: {translation:[91.10 , 35.69 , -6.17],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Lung3" : { mesh: "mesh_annot", tags: ["Lung3"], transform: {translation:[90.21 , 30.13 , -18.91],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Spleen3" : { mesh: "mesh_annot", tags: ["Spleen3"], transform: {translation:[50.47 , 18.54 , 20.26],rotation:[45,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Thymus3" : { mesh: "mesh_annot", tags: ["Thymus3"], transform: {translation:[104.13 , 34.99 , -7.56],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Kidney3" : { mesh: "mesh_annot", tags: ["Kidney3"], transform: {translation:[46.24 , 17.97 , -21.13 ],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Urinary bladder3" : { mesh: "mesh_annot", tags: ["Urinary bladder3"], transform: {translation:[-15.15 , 30.90 , -2.77],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Mammary glands3" : { mesh: "mesh_annot", tags: ["Mammary glands3"], transform: {translation:[0.55 , 13.59 , 48.85],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Ovary and oviduct3" : { mesh: "mesh_annot", tags: ["Ovary and oviduct3"], transform: {translation:[27.03 , 16.00 , -29.48],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Uterus3" : { mesh: "mesh_annot", tags: ["Uterus3"], transform: {translation:[-11.79 , 28.68 , 0.34],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Uterine horn3" : { mesh: "mesh_annot", tags: ["Uterine horn3"], transform: {translation:[1.89 , 26.60 , 10.10],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
+			"model_Vagina3" : { mesh: "mesh_annot", tags: ["Vagina3"], transform: {translation:[-42.88 , 27.21 , -3.91],rotation:[0,0,0],scale:[1.5,1.5,1.5]}, useLighting:false },
 
 		},
 		trackball: {

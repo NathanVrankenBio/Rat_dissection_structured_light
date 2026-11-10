@@ -7,6 +7,95 @@
 <link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	
 	<style>
+        #termsModalOverlay {
+            display: flex !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.88) !important;
+            z-index: 999999 !important;
+            justify-content: center !important;
+            align-items: center !important;
+            font-family: Verdana, sans-serif !important;
+            box-sizing: border-box !important;
+			pointer-events: auto !important;
+        }
+        .terms-card {
+            background-color: #222 !important;
+            color: #fff !important;
+            border: 1px solid #444 !important;
+            border-radius: 8px !important;
+            padding: 24px !important;
+            max-width: 480px !important;
+            width: 90% !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+            box-sizing: border-box !important;
+			pointer-events: auto !important;
+        }
+        .terms-title {
+            font-size: 18px !important;
+            font-weight: bold !important;
+            margin-bottom: 12px !important;
+            color: #fff !important;
+            border-bottom: 1px solid #444 !important;
+            padding-bottom: 8px !important;
+        }
+        .terms-text {
+            height: 140px !important;
+            overflow-y: auto !important;
+            background-color: #111 !important;
+            border: 1px solid #333 !important;
+            padding: 12px !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+            color: #ccc !important;
+            margin-bottom: 16px !important;
+            border-radius: 4px !important;
+			pointer-events: auto !important;
+        }
+        .terms-checkbox-label {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            font-size: 13px !important;
+            cursor: pointer !important;
+            user-select: none !important;
+            margin-bottom: 18px !important;
+            color: #eee !important;
+			pointer-events: auto !important;
+        }
+        .terms-checkbox-label input[type="checkbox"] {
+            width: 18px !important;
+            height: 18px !important;
+            cursor: pointer !important;
+			pointer-events: auto !important;
+        }
+        .terms-btn {
+            background-color: #0076d6 !important;
+            color: white !important;
+            border: none !important;
+            padding: 10px 20px !important;
+            font-size: 14px !important;
+            font-weight: bold !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            transition: background-color 0.2s !important;
+			pointer-events: auto !important;
+        }
+        .terms-btn:disabled {
+            background-color: #444 !important;
+            color: #888 !important;
+            cursor: not-allowed !important;
+        }
+        .terms-btn:hover:not(:disabled) {
+            background-color: #005bb5 !important;
+        }
+		
 		input[type="color"] {
 			-webkit-appearance: none;
 			border: 3px solid #ccc;
@@ -57,7 +146,89 @@
 </head>
 	
 <body style="background-color:black;">
+	
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
+	
+<div id="termsModalOverlay" onmousedown="event.stopPropagation()" onclick="event.stopPropagation()" onmouseup="event.stopPropagation()">
+  <div class="terms-card" onmousedown="event.stopPropagation()" onclick="event.stopPropagation()">
+    <div class="terms-title">Terms of Use</div>
+    <div class="terms-text">
+      	<h2>Terms of Use</h2>
+		<h3>Real Dissections 3D (RD3D) – Hasselt University</h3>
+		<ol>
+  			<li>
+    			<strong>Ownership</strong>
+    			<p>The RD3D platform, including 3D models, annotations and documentation, is the exclusive property of UHasselt.</p>
+  			</li>
+
+  			<li>
+    			<strong>Mandatory acknowledgement</strong>
+    			<p>In any use, UHasselt must be clearly acknowledged as owner of the platform.</p>
+  			</li>
+
+  			<li>
+    			<strong>Citation in publications</strong>
+    			<p>Any publication, presentation, thesis, teaching material or online communication based on the platform must explicitly mention UHasselt as developer.</p>
+    
+    			<p><strong>Minimum wording:</strong></p>
+    			<p>“These results were obtained using the RD3D platform, developed by UHasselt.”</p>
+    
+    			<p><strong>Recommended citation – APA:</strong></p>
+    			<p>UHasselt. (year of use). <em>Real Dissections 3D (RD3D) – digital platform</em>. Hasselt University. <a href="https://www.aquaticbiodiversityteam.be/education/RD3D" target="_blank" rel="noopener">https://www.aquaticbiodiversityteam.be/education/RD3D</a>.</p>
+    
+    			<p><strong>Recommended citation – Chicago:</strong></p>
+    			<p>UHasselt. <em>Real Dissections 3D (RD3D) – digital platform</em>. Hasselt University, accessed [date], <a href="https://www.aquaticbiodiversityteam.be/education/RD3D" target="_blank" rel="noopener">https://www.aquaticbiodiversityteam.be/education/RD3D</a>.</p>
+  			</li>
+
+  			<li>
+    			<strong>No transfer of rights</strong>
+    			<p>Free access does not grant any (intellectual property) rights to the platform or its content.</p>
+  			</li>
+
+  			<li>
+    			<strong>Permitted use</strong>
+    			<p>The platform may only be used for all non-commercial purposes. Modifications to content or functionality are prohibited without written consent from UHasselt.</p>
+  			</li>
+
+  			<li>
+    			<strong>Commercial use</strong>
+    			<p>Any direct or indirect commercial use is prohibited without prior written consent from UHasselt. UHasselt may require a license agreement and fee.</p>
+  			</li>
+
+  			<li>
+    			<strong>Disclaimer of liability</strong>
+    			<p>UHasselt cannot be held liable for any damage, errors, omissions or consequences resulting from the use of the platform, nor for decisions based on it.</p>
+  			</li>
+
+  			<li>
+    			<strong>Availability</strong>
+    			<p>UHasselt may take the platform offline, restrict or modify it at any time without prior notice. No right to continuity or compensation can be derived from this.</p>
+  			</li>
+
+  			<li>
+    			<strong>Privacy</strong>
+    			<p>Personal data of users will be used solely for access management, monitoring of use and communication about the platform, in accordance with UHasselt’s privacy policy.</p>
+  			</li>
+
+  			<li>
+    			<strong>Termination</strong>
+    			<p>In case of non-compliance with these terms, UHasselt may terminate access immediately.</p>
+  			</li>
+
+  			<li>
+    			<strong>Acceptance</strong>
+    			<p>By using the platform, the user declares to have read and accepted these terms.</p>
+  			</li>
+			</ol>
+    </div>
+    <label class="terms-checkbox-label" onmousedown="event.stopPropagation()">
+      <input type="checkbox" id="termsCheckbox" onchange="toggleAgreeButton()" onclick="event.stopPropagation()" />
+      <span>I have read and agree to the Terms of Use</span>
+    </label>
+    <button id="agreeBtn" class="terms-btn" disabled onclick="acceptTerms(event)">Submit</button>
+  </div>
+</div>
+	
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/light/home.png"/><br/>
 <!--NEXTMODEL-->
@@ -424,6 +595,22 @@
 
 <script type="text/javascript">
 
+function toggleAgreeButton() {
+  var chk = document.getElementById("termsCheckbox");
+  var btn = document.getElementById("agreeBtn");
+  if (btn && chk) {
+    btn.disabled = !chk.checked;
+  }
+}
+
+function acceptTerms(e) {
+  if (e) e.stopPropagation();
+  var modal = document.getElementById("termsModalOverlay");
+  if (modal) {
+    modal.style.setProperty("display", "none", "important");
+  }
+}
+	
 function toggle_menus() {
   var rm1 = document.getElementById("rightmenu1");
   var rm2 = document.getElementById("rightmenu2");
